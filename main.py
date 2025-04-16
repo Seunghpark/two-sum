@@ -1,9 +1,10 @@
 from typing import List
 
 def twoSum(nums: List[int], target: int) -> List[int]:
-    map = {}
-    for i, num in enumerate(nums):
-        diff =target- num
-        if diff in map:
-            return [map[diff], i]
-        num_map[num] = i
+    num_to_index={}
+    for index, num in enumerate(nums):
+        complement=target-num
+        if complement in num_to_index:
+            return [num_to_index[complement], index]
+        num_to_index[num]=index
+    return []
